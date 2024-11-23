@@ -3,7 +3,7 @@ import {API_OPTIONS} from "../utils/constatants";
 import {addPopularMovies} from "../utils/movieSlice";
 import {useEffect} from "react";
 
-const usePupularMovies = () =>{
+const usePopularMovies = () =>{
     //fetching data from tmdb api and update store
 
     const dispatch = useDispatch();
@@ -20,4 +20,4 @@ const usePupularMovies = () =>{
     },[])
 }
 
-export default usePupularMovies;
+export default usePopularMovies;

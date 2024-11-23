@@ -4,11 +4,14 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {addUser, removeUser} from "../utils/UserSlice";
-import {LOGO} from "../utils/constatants";
+import {LOGO, SUPPORTED_LANGUAGES} from "../utils/constatants";
+import {toggleSearchView} from "../utils/searchSlice";
+import {changeLanguage} from "../utils/configSlice";
 
 const Header = () =>{
     const navigate = useNavigate();
     const user = useSelector(store => store.user);
+    const showSearch = useSelector(store => store.search.showSearch);
     const handleSignOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
@@ -18,6 +21,14 @@ const Header = () =>{
             navigate("/error");
         });
     }
+    const handleSearchClick = () => {
+        // toggle the search
+        dispatch(toggleSearchView());
+    }
+    const handleLanguageChange = (e) =>{
+        dispatch(changeLanguage(e.currentTarget.value));
+    }
+
 
     const dispatch = useDispatch();
 
@@ -45,6 +56,14 @@ const Header = () =>{
             <img className="w-44" src={LOGO} alt="logo"/>
 
             {user && (<div className="flex p-2 justify-center">
+                {showSearch && (<select className="p-2 m-2 bg-gray-800 text-white"
+                onChange={handleLanguageChange}>
+                    {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+                </select>)}
+                <button className="py-2 px-4 mx-4 my-2 bg-white text-black rounded-lg"
+                onClick={handleSearchClick}>
+                    {showSearch? "Homepage" : "Search Movies"}
+                </button>
                 <img className="w-12 h-12" alt="usericon"
                      src={user?.photoURL}/>
                 <button onClick={handleSignOut} className="font-bold text-white p-4 ">Sign Out</button>
