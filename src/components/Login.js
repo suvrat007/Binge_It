@@ -82,10 +82,11 @@ const Login = () => {
             <Header/>
             <div className="absolute">
                 <img
+                    className="h-screen w-screen object-cover"
                     src={BG_URL}
                     alt="background-img"/>
             </div>
-            <form onSubmit={(e) => e.preventDefault()} className="absolute w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-85">
+            <form onSubmit={(e) => e.preventDefault()} className="absolute w-full md:w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-85">
                 <h1 className="font-bold text-3xl py-3 my-2 text-white">{isSignInForm ? "Log In" : "Sign Up"}</h1>
                 { !isSignInForm && <input type="text" ref={name} placeholder="Full Name" className="p-3 my-3 w-full bg-gray-700 rounded-lg"/>}
                 <input ref={email} autoComplete="username" type="text" placeholder="Email Id" className="p-3 my-3 w-full bg-gray-700 rounded-lg"/>

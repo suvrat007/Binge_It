@@ -8,7 +8,7 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZGY3ZjlhMDlmOGMyYzZhMzg4MDI5ZGQxODY5NGEyMyIsIm5iZiI6MTczMjI1NzQzMi42NDU5NjU2LCJzdWIiOiI2NzQwMjM0N2FlMTJiYWZmZjU3NTU4OTAiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.FUwmXhwtCTGI0j2gFHZKjVwUeHF_60z2MiqhJMz23GA'
+        Authorization: 'Bearer' + process.env.REACT_APP_TMDB_API_KEY
     }
 };
 
@@ -19,3 +19,5 @@ export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/81d64f3c-9627-
 export const SUPPORTED_LANGUAGES = [{identifier:"en" ,name:"English"},
     {identifier:"hindi" ,name:"Hindi"},
     {identifier:"spanish" ,name:"Spanish"}]
+
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINIAI_KEY
