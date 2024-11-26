@@ -20,4 +20,4 @@ export const SUPPORTED_LANGUAGES = [{identifier:"en" ,name:"English"},
     {identifier:"hindi" ,name:"Hindi"},
     {identifier:"spanish" ,name:"Spanish"}]
 
-export const GEMINI_API_KEY = process.env.REACT_APP_GEMINIAI_KEY
+// export const GEMINI_API_KEY = process.env.REACT_APP_GEMINIAI_KEY

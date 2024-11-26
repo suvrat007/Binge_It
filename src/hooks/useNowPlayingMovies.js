@@ -6,7 +6,7 @@ import {useEffect} from "react";
 const useNowPlayingMovies = () =>{
     //fetching data from tmdb api and update store
 
-    const nowPlayingMovies = useSelector(store=>store.movies.nowPlayingMovies);
+    const nowPlayingMovies = useSelector(store=>store?.movies?.nowPlayingMovies);
 
 
     const dispatch = useDispatch();
