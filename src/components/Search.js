@@ -7,11 +7,11 @@ const Search = () => {
         <>
             <div className="fixed -z-10">
                 <img
-                    className=""
+                    className="bg-black h-screen object-cover md:h-full"
                     src={BG_URL}
                     alt="background-img"/>
             </div>
-            <div className="">
+            <div className="-z-10">
                     <SearchBar/>
                     <MovieSuggestions/>
             </div>

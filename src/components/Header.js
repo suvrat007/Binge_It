@@ -64,7 +64,7 @@ const Header = () =>{
                 onClick={handleSearchClick}>
                     {showSearch? "Homepage" : "Search Movies"}
                 </button>
-                <img className="hidden md:block w-12 h-12" alt="usericon"
+                <img className="hidden rounded-lg md:block w-12 h-12" alt="usericon"
                      src={user?.photoURL}/>
                 <button onClick={handleSignOut} className="font-bold text-white p-4 ">Sign Out</button>
                 {/*<button  className="font-bold text-white p-4 ">Sign Out</button>*/}

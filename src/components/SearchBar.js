@@ -1,7 +1,7 @@
 import lang from "../utils/LanguageConstant";
 import {useDispatch, useSelector} from "react-redux";
 import {useRef} from "react";
-import openai from "../utils/openai";
+
 import {API_OPTIONS} from "../utils/constatants";
 import {addGptMovieResult} from "../utils/searchSlice";
 import model from "../utils/geminiAi";
@@ -41,12 +41,12 @@ const SearchBar = () =>{
         dispatch(addGptMovieResult({movieNames: gptMovies, movieResults: tmdbResults}));
     }
     return(
-        <div className="pt-[35%] md:pt-[10%] flex justify-center">
+        <div className="pt-[45%] md:pt-[10%] flex items-center justify-center">
             <form className="w-full md:w-1/2 bg-black grid grid-cols-12 rounded-lg"
             onSubmit={(e) =>{e.preventDefault()}}>
                 <input ref={searchText} type="text" className="p-4 m-4 col-span-9 rounded-lg" placeholder={lang[langKey].searchPlaceholder} />
                 <button type="submit" className="py-2 px-4 m-4 bg-red-700 text-white rounded-lg col-span-3"
-                onClick={handleGptSearchClick}>{lang[langKey].search}</button>
+                onClick={handleGptSearchClick}>{lang[langKey]?.search}</button>
             </form>
         </div>
     )
