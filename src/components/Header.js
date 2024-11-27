@@ -52,15 +52,16 @@ const Header = () =>{
         return () => unsubscribe();
     },[]);
     return (
-        <div className=" absolute py-2 px-8 w-screen z-10 bg-gradient-to-b from-black z-10  flex flex-col md:flex-row justify-between ">
+        <div className=" absolute py-2 md:px-8 px-2 text-lg w-screen z-10 bg-gradient-to-b from-black z-10  flex flex-col md:flex-row justify-between ">
             <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo"/>
 
-            {user && (<div className="flex justify-between p-2 justify-center">
-                {showSearch && (<select className="p-2 m-2 bg-gray-800 text-white"
+            {user && (
+                <div className="flex justify-between  p-2 justify-center">
+                {showSearch && (<select className="p-2 m-2 rounded-lg bg-gray-800 text-white"
                 onChange={handleLanguageChange}>
                     {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
                 </select>)}
-                <button className="py-2 px-4 mx-4 my-2 bg-white text-black rounded-lg"
+                <button className="py-2 px-4 mx-2 md:mx-4 my-2 bg-white text-black rounded-lg"
                 onClick={handleSearchClick}>
                     {showSearch? "Homepage" : "Search Movies"}
                 </button>
