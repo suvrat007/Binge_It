@@ -96,6 +96,21 @@ const Login = () => {
                         onClick={handleButtonClick}
                         className="p-3 my-3 w-full bg-red-700 text-white rounded-lg">{isSignInForm ? "Log In" : "Sign Up"
                         }</button>
+
+                {!isSignInForm &&
+                    <div className="p-2 m-2">
+                        <p className="text-gray-500  font-medium">
+                            Password must contain :
+                            <ul className="text-gray-500 text-[12px] leading-4  font-medium">
+                                <li>Atleast 8 Characters</li>
+                                <li>Atleast 1 Uppercase character</li>
+                                <li>Atleast 1 Special character</li>
+                                <li>Atleast 1 Number</li>
+
+                            </ul>
+                        </p>
+                    </div>
+                }
                 <p className="my-3 text-white cursor-pointer" onClick={toggleSignIn}>
                     {isSignInForm ? "New here? Sign Up NOW !" : "Already a user? Log In here."}</p>
             </form>
